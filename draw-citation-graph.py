@@ -15,12 +15,36 @@
 #
 # ... then the file should be called Hanesch1989.pdf
 #
-# This will produce a graph in dot format on standard output.  If you
-# supply a TeX file as the last parameter, it will attempt to start
-# include every citation in that file in the graph.  If you don't, it
-# will attempt to include every work in the .bib file.
-
+# This will produce a graph in Graphviz's dot format on standard
+# output.  If you supply a TeX file as the last parameter, it will
+# attempt to start include every citation in that file in the graph.
+# If you don't, it will attempt to include every work in the .bib
+# file.
+#
+# To generate a PNG citation graph, you could do something like:
+#
+#   draw-citation-graph references.bib papers/ aargh2.tex > test.dot
+#
+# .. and then:
+#
+#   neato -Tpng -o test-neato.png < test.dot
+#
 # Depends on: apt-get install python-bibtex
+#
+# Copyright 2009 Mark Longair
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
 import _bibtex
